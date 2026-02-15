@@ -6,7 +6,6 @@ import { ROUTES } from '@/config';
 
 import { AuthButtons } from '@/components/auth';
 import { Logo } from '@/components/common';
-import { ThemeToggle } from '@/components/common/theme-toggle';
 import { Container } from '@/components/ui/container';
 
 interface NavbarProps {
@@ -19,7 +18,7 @@ interface NavbarProps {
  */
 export function Navbar(_props: NavbarProps) {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo - visible on mobile only */}
@@ -33,7 +32,6 @@ export function Navbar(_props: NavbarProps) {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <AuthButtons />
           </div>
         </div>

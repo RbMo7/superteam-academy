@@ -2,8 +2,6 @@
 
 export type Locale = 'en' | 'pt-br' | 'es';
 
-export type Theme = 'light' | 'dark' | 'system';
-
 export interface NavItem {
   title: string;
   href: string;

@@ -15,8 +15,7 @@ type ProvidersProps = {
  * Client-side providers wrapper.
  * Includes WalletProvider, AuthProvider, and analytics providers.
  *
- * Note: ClerkProvider and ThemeProvider are in layout.tsx
- * since they can be server-rendered.
+ * ClerkProvider is in layout.tsx.
  */
 export function Providers({ children }: ProvidersProps) {
   return (

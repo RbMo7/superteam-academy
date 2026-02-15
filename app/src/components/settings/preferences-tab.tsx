@@ -2,8 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useTheme } from 'next-themes';
-import { FiSave, FiGlobe, FiMonitor, FiSun, FiMoon, FiSettings } from 'react-icons/fi';
+import { FiSave, FiGlobe, FiMonitor, FiSettings } from 'react-icons/fi';
 
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -21,10 +20,8 @@ import {
   preferencesSchema,
   type PreferencesFormData,
   LANGUAGE_OPTIONS,
-  THEME_OPTIONS,
   DATE_FORMAT_OPTIONS,
 } from '@/lib/schemas/settings';
-import { cn } from '@/lib/utils';
 
 interface PreferencesTabProps {
   initialData?: Partial<PreferencesFormData>;
@@ -32,11 +29,9 @@ interface PreferencesTabProps {
 }
 
 /**
- * Preferences settings tab - Language, theme, display preferences
+ * Preferences settings tab - Language and display preferences
  */
 export function PreferencesTab({ initialData, onSave }: PreferencesTabProps) {
-  const { theme, setTheme } = useTheme();
-
   const {
     watch,
     setValue,
@@ -46,7 +41,6 @@ export function PreferencesTab({ initialData, onSave }: PreferencesTabProps) {
     resolver: zodResolver(preferencesSchema),
     defaultValues: {
       language: initialData?.language ?? 'en',
-      theme: (theme as PreferencesFormData['theme']) ?? 'system',
       timezone: initialData?.timezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone,
       dateFormat: initialData?.dateFormat ?? 'MM/DD/YYYY',
       compactMode: initialData?.compactMode ?? false,
@@ -56,7 +50,6 @@ export function PreferencesTab({ initialData, onSave }: PreferencesTabProps) {
   });
 
   const language = watch('language');
-  const currentTheme = watch('theme');
   const dateFormat = watch('dateFormat');
   const compactMode = watch('compactMode');
   const showXpAnimations = watch('showXpAnimations');
@@ -66,11 +59,6 @@ export function PreferencesTab({ initialData, onSave }: PreferencesTabProps) {
     if (onSave) {
       await onSave(data);
     }
-  }
-
-  function handleThemeChange(value: string) {
-    setValue('theme', value as PreferencesFormData['theme'], { shouldDirty: true });
-    setTheme(value);
   }
 
   return (
@@ -133,52 +121,18 @@ export function PreferencesTab({ initialData, onSave }: PreferencesTabProps) {
         </CardContent>
       </Card>
 
-      {/* Appearance */}
+      {/* Display */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FiMonitor className="size-5" />
-            Appearance
+            Display
           </CardTitle>
           <CardDescription>
             Customize how the app looks
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {/* Theme */}
-          <div className="space-y-2">
-            <Label>Theme</Label>
-            <div className="grid grid-cols-3 gap-2">
-              {THEME_OPTIONS.map((option) => {
-                const Icon =
-                  option.value === 'light'
-                    ? FiSun
-                    : option.value === 'dark'
-                      ? FiMoon
-                      : FiMonitor;
-
-                return (
-                  <button
-                    key={option.value}
-                    type="button"
-                    onClick={() => handleThemeChange(option.value)}
-                    className={cn(
-                      'flex flex-col items-center gap-2 rounded-lg border p-4 transition-colors',
-                      currentTheme === option.value
-                        ? 'border-primary bg-primary/5'
-                        : 'border-border hover:bg-muted'
-                    )}
-                  >
-                    <Icon className="size-5" />
-                    <span className="text-sm font-medium">{option.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <Separator />
-
           {/* Compact Mode */}
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">

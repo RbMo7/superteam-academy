@@ -44,7 +44,7 @@ export function Sidebar() {
 
   return (
     <TooltipProvider delayDuration={0}>
-      <aside className="fixed left-0 top-0 z-[60] hidden h-screen w-16 flex-col border-r bg-background md:flex hover:w-56 transition-all duration-200 group">
+      <aside className="fixed left-0 top-0 z-[60] hidden h-screen w-16 flex-col border-r border-[#e5e5e5] bg-white md:flex hover:w-56 transition-all duration-200 group">
         {/* Logo */}
         <Link
           href={ROUTES.HOME}
@@ -133,8 +133,8 @@ function NavLink({ item, isActive }: NavLinkProps) {
           className={cn(
             'flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors',
             isActive
-              ? 'bg-primary/10 text-primary'
-              : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+              ? 'bg-[#2f6b3f]/10 text-[#2f6b3f]'
+              : 'text-[#57625a] hover:bg-[#f5f5f4] hover:text-[#1b231d]'
           )}
         >
           <span className="shrink-0">{item.icon}</span>

@@ -48,7 +48,6 @@ export type AccountFormData = z.infer<typeof accountSchema>;
  */
 export const preferencesSchema = z.object({
   language: z.enum(['en', 'pt-BR', 'es']),
-  theme: z.enum(['light', 'dark', 'system']),
   timezone: z.string(),
   dateFormat: z.enum(['MM/DD/YYYY', 'DD/MM/YYYY', 'YYYY-MM-DD']),
   compactMode: z.boolean(),
@@ -79,15 +78,6 @@ export const LANGUAGE_OPTIONS = [
   { value: 'en', label: 'English' },
   { value: 'pt-BR', label: 'Português (Brasil)' },
   { value: 'es', label: 'Español' },
-] as const;
-
-/**
- * Theme options
- */
-export const THEME_OPTIONS = [
-  { value: 'light', label: 'Light' },
-  { value: 'dark', label: 'Dark' },
-  { value: 'system', label: 'System' },
 ] as const;
 
 /**

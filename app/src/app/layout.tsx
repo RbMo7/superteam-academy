@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
-import { ThemeProvider } from 'next-themes';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 
 import { APP_DESCRIPTION, APP_NAME } from '@/lib/constants';
@@ -48,10 +47,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F8FAFC' },
-    { media: '(prefers-color-scheme: dark)', color: '#0F172A' },
-  ],
+  themeColor: '#2f6b3f',
   width: 'device-width',
   initialScale: 1,
 };
@@ -65,27 +61,20 @@ export default function RootLayout({
     <ClerkProvider
       appearance={{
         variables: {
-          colorPrimary: 'hsl(221.2 83.2% 53.3%)',
+          colorPrimary: '#2f6b3f',
           borderRadius: '0.75rem',
         },
         elements: {
-          formButtonPrimary: 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm',
+          formButtonPrimary: 'bg-[#2f6b3f] hover:bg-[#2f6b3f]/90 text-white shadow-sm',
           card: 'shadow-lg rounded-2xl',
           formFieldInput: 'rounded-lg',
         },
       }}
       afterSignOutUrl="/"
     >
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Providers>{children}</Providers>
-          </ThemeProvider>
+      <html lang="en">
+        <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-white`}>
+          <Providers>{children}</Providers>
         </body>
       </html>
     </ClerkProvider>

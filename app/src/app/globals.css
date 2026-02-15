@@ -2,8 +2,6 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -46,7 +44,13 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Custom colors */
+  /* Custom brand colors - reference CSS variables */
+  --color-cream: var(--cream);
+  --color-forest: var(--forest);
+  --color-brand-green: var(--brand-green);
+  --color-dark: var(--dark);
+
+  /* Custom semantic colors */
   --color-xp: var(--xp);
   --color-xp-foreground: var(--xp-foreground);
   --color-streak: var(--streak);
@@ -60,118 +64,73 @@
 :root {
   --radius: 0.75rem;
 
-  /* Light theme - Soft, clean aesthetic */
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  /* Brand colors */
+  --cream: #f7eacb;
+  --forest: #2f6b3f;
+  --brand-green: #008c4c;
+  --dark: #1b231d;
 
-  /* Primary - Blue */
-  --primary: oklch(0.546 0.245 262.881);
-  --primary-foreground: oklch(0.985 0 0);
+  /* Light theme - Superteam Green palette */
+  --background: #ffffff;
+  --foreground: #1b231d;
+  --card: #ffffff;
+  --card-foreground: #1b231d;
+  --popover: #ffffff;
+  --popover-foreground: #1b231d;
 
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.46 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.546 0.245 262.881);
+  /* Primary - Forest Green */
+  --primary: #2f6b3f;
+  --primary-foreground: #ffffff;
 
-  /* XP Gold */
-  --xp: oklch(0.795 0.184 86.047);
-  --xp-foreground: oklch(0.421 0.095 57.708);
+  /* Secondary - Cream */
+  --secondary: #f7eacb;
+  --secondary-foreground: #1b231d;
 
-  /* Streak Orange */
-  --streak: oklch(0.705 0.213 47.604);
-  --streak-foreground: oklch(1 0 0);
+  /* Muted */
+  --muted: #f5f5f4;
+  --muted-foreground: #57625a;
 
-  /* Success Green */
-  --success: oklch(0.696 0.17 162.48);
-  --success-foreground: oklch(1 0 0);
+  /* Accent - Emerald */
+  --accent: #008c4c;
+  --accent-foreground: #ffffff;
 
-  /* Warning Amber */
-  --warning: oklch(0.795 0.184 86.047);
-  --warning-foreground: oklch(0.421 0.095 57.708);
+  --destructive: #dc2626;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #2f6b3f;
 
-  /* Charts */
-  --chart-1: oklch(0.546 0.245 262.881);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.795 0.184 86.047);
-  --chart-4: oklch(0.705 0.213 47.604);
-  --chart-5: oklch(0.627 0.265 303.9);
+  /* XP Gold - using emerald instead */
+  --xp: #008c4c;
+  --xp-foreground: #ffffff;
 
-  /* Sidebar */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.546 0.245 262.881);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.546 0.245 262.881);
-}
+  /* Streak - Forest */
+  --streak: #2f6b3f;
+  --streak-foreground: #ffffff;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  /* Success - Emerald */
+  --success: #008c4c;
+  --success-foreground: #ffffff;
 
-  /* Primary - Blue */
-  --primary: oklch(0.623 0.214 259.815);
-  --primary-foreground: oklch(0.145 0 0);
-
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.623 0.214 259.815);
-
-  /* XP Gold */
-  --xp: oklch(0.795 0.184 86.047);
-  --xp-foreground: oklch(0.145 0 0);
-
-  /* Streak Orange */
-  --streak: oklch(0.705 0.213 47.604);
-  --streak-foreground: oklch(0.145 0 0);
-
-  /* Success Green */
-  --success: oklch(0.696 0.17 162.48);
-  --success-foreground: oklch(0.145 0 0);
-
-  /* Warning Amber */
-  --warning: oklch(0.795 0.184 86.047);
-  --warning-foreground: oklch(0.145 0 0);
+  /* Warning */
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
 
   /* Charts */
-  --chart-1: oklch(0.623 0.214 259.815);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.795 0.184 86.047);
-  --chart-4: oklch(0.705 0.213 47.604);
-  --chart-5: oklch(0.627 0.265 303.9);
+  --chart-1: #2f6b3f;
+  --chart-2: #008c4c;
+  --chart-3: #3d8b51;
+  --chart-4: #5aa469;
+  --chart-5: #7dbd8a;
 
   /* Sidebar */
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.623 0.214 259.815);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --sidebar: #1b231d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #008c4c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2f6b3f;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #008c4c;
 }
 
 @layer base {
@@ -193,15 +152,11 @@
   }
 
   .gradient-primary {
-    @apply from-primary to-primary/80 bg-gradient-to-r;
+    @apply from-primary to-accent bg-linear-to-r;
   }
 
-  .gradient-xp {
-    @apply from-xp bg-gradient-to-r to-amber-400;
-  }
-
-  .gradient-streak {
-    @apply from-streak bg-gradient-to-r to-orange-400;
+  .gradient-forest {
+    @apply from-forest to-brand-green bg-linear-to-r;
   }
 
   .card-shadow {
@@ -214,5 +169,19 @@
     box-shadow:
       0 10px 15px -3px rgb(0 0 0 / 0.08),
       0 4px 6px -2px rgb(0 0 0 / 0.04);
+  }
+
+  /* Grid pattern background */
+  .bg-grid {
+    background-image: 
+      linear-gradient(to right, rgba(47, 107, 63, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47, 107, 63, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Dot pattern background */
+  .bg-dots {
+    background-image: radial-gradient(rgba(47, 107, 63, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
