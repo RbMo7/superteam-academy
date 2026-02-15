@@ -15,14 +15,9 @@ const sizeClasses = {
   lg: { icon: 'h-10 w-10', horizontal: 'h-10' },
 };
 
-const textSizeClasses = {
-  sm: 'text-sm',
-  md: 'text-lg',
-  lg: 'text-xl',
-};
 
-export function Logo({ size = 'md', showText = true, variant = 'icon', className }: LogoProps) {
-  const heightPx = size === 'sm' ? 24 : size === 'md' ? 32 : 40;
+export function Logo({ size = 'md', variant = 'icon', className }: LogoProps) {
+  const heightPx = size === 'sm' ? 24 : size === 'md' ? 45 : 40;
 
   return (
     <div className={cn('flex items-center gap-2', className)}>
@@ -37,19 +32,13 @@ export function Logo({ size = 'md', showText = true, variant = 'icon', className
         />
       ) : (
         <>
-          <div
-            className={cn(
-              'bg-primary text-primary-foreground flex items-center justify-center rounded-lg font-bold',
-              sizeClasses[size].icon
-            )}
-          >
-            SA
-          </div>
-          {showText && (
-            <span className={cn('font-semibold', textSizeClasses[size])}>
-              Superteam Academy
-            </span>
-          )}
+         <Image
+          src="/ST-EMERALD-GREEN-VERTICAL.png"
+          alt="Superteam Academy"
+          width={120}
+          height={120}
+          priority
+        />
         </>
       )}
     </div>

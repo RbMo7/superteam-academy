@@ -28,17 +28,17 @@ export function AppShell({
   className,
 }: AppShellProps) {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen w-full">
       {/* Sidebar - desktop only */}
       <Sidebar />
 
       {/* Main content area */}
-      <div className="flex flex-1 flex-col md:pl-16">
+      <div className="flex min-w-0 w-full flex-1 flex-col md:pl-16">
         <Navbar variant={variant} />
 
         <main
           className={cn(
-            'flex-1',
+            'flex-1 w-full min-w-0',
             // Add bottom padding for mobile nav
             showMobileNav && 'pb-16 md:pb-0',
             className

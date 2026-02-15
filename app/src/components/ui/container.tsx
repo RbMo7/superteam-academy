@@ -34,7 +34,7 @@ export function Container({
         'w-full',
         sizeClasses[size],
         centered && 'mx-auto',
-        padded && 'px-4 sm:px-6 lg:px-8',
+        padded && 'px-6 sm:px-8 lg:px-12',
         className
       )}
       {...props}
