@@ -1,6 +1,8 @@
 /**
  * Layout components barrel export.
- * Add layout components here (Shell, Navbar, Sidebar, Footer).
  */
 
-// Placeholder - will be implemented in Phase 2
+export { AppShell } from './app-shell';
+export { Navbar } from './navbar';
+export { Footer } from './footer';
+export { MobileNav } from './mobile-nav';

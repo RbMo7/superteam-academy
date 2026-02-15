@@ -18,6 +18,22 @@ const badgeVariants = cva(
           'border-border text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground',
         ghost: '[a&]:hover:bg-accent [a&]:hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 [a&]:hover:underline',
+        // Gamification variants
+        xp: 'bg-xp/15 text-xp border-xp/20',
+        streak: 'bg-streak/15 text-streak border-streak/20',
+        success: 'bg-success/15 text-success border-success/20',
+        // Difficulty variants
+        beginner: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+        intermediate:
+          'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/20',
+        advanced: 'bg-rose-500/15 text-rose-600 dark:text-rose-400 border-rose-500/20',
+        // Track variants
+        'track-core': 'bg-blue-500/15 text-blue-600 dark:text-blue-400 border-blue-500/20',
+        'track-defi': 'bg-purple-500/15 text-purple-600 dark:text-purple-400 border-purple-500/20',
+        'track-nft':
+          'bg-fuchsia-500/15 text-fuchsia-600 dark:text-fuchsia-400 border-fuchsia-500/20',
+        'track-gaming': 'bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+        'track-dao': 'bg-teal-500/15 text-teal-600 dark:text-teal-400 border-teal-500/20',
       },
     },
     defaultVariants: {
