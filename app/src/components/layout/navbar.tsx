@@ -8,9 +8,9 @@ import { FiBook, FiCompass, FiHome, FiTrendingUp } from 'react-icons/fi';
 import { ROUTES } from '@/config';
 import { cn } from '@/lib/utils';
 
+import { AuthButtons } from '@/components/auth';
 import { Logo } from '@/components/common';
 import { ThemeToggle } from '@/components/common/theme-toggle';
-import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 
 interface NavItem {
@@ -89,11 +89,7 @@ export function Navbar({ variant = 'minimal' }: NavbarProps) {
           {/* Actions */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            {/* Auth buttons - will be replaced with actual auth in Phase 3 */}
-            <Button variant="ghost" size="sm" className="hidden sm:flex">
-              Sign In
-            </Button>
-            <Button size="sm">Get Started</Button>
+            <AuthButtons />
           </div>
         </div>
       </Container>

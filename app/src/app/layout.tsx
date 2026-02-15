@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from 'next';
+import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from 'next-themes';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 
 import { APP_DESCRIPTION, APP_NAME } from '@/lib/constants';
+import { Providers } from '@/providers/providers';
 
 import './globals.css';
 
@@ -60,17 +62,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        variables: {
+          colorPrimary: 'hsl(221.2 83.2% 53.3%)',
+          borderRadius: '0.75rem',
+        },
+        elements: {
+          formButtonPrimary: 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm',
+          card: 'shadow-lg rounded-2xl',
+          formFieldInput: 'rounded-lg',
+        },
+      }}
+      afterSignOutUrl="/"
+    >
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Providers>{children}</Providers>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
