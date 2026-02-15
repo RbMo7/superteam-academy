@@ -1,0 +1,58 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "retry": "Intentar de nuevo",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "noResults": "No se encontraron resultados"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "courses": "Cursos",
+    "explore": "Explorar",
+    "leaderboard": "Clasificación",
+    "profile": "Perfil",
+    "credentials": "Credenciales",
+    "settings": "Configuración",
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión"
+  },
+  "auth": {
+    "connectWallet": "Conectar Billetera",
+    "disconnectWallet": "Desconectar",
+    "walletConnected": "Billetera Conectada",
+    "signInWith": "Iniciar sesión con {{provider}}"
+  },
+  "course": {
+    "enroll": "Inscribirse",
+    "enrolled": "Continuar Aprendiendo",
+    "completed": "Completado",
+    "lessons": "{{count}} lecciones",
+    "xp": "{{amount}} XP",
+    "difficulty": {
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+    "progress": "{{percent}}% completado"
+  },
+  "gamification": {
+    "streak": "{{days}} días seguidos",
+    "rank": "Posición #{{position}}",
+    "level": "Nivel {{level}}",
+    "xpToNext": "{{xp}} XP para siguiente nivel",
+    "achievement": "¡Logro Desbloqueado!"
+  },
+  "home": {
+    "title": "Aprende Desarrollo Solana",
+    "subtitle": "Gana credenciales verificables y XP mientras dominas el desarrollo blockchain",
+    "cta": "Comenzar a Aprender"
+  }
+}

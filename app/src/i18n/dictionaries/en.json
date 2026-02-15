@@ -1,0 +1,58 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "noResults": "No results found"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "courses": "Courses",
+    "explore": "Explore",
+    "leaderboard": "Leaderboard",
+    "profile": "Profile",
+    "credentials": "Credentials",
+    "settings": "Settings",
+    "signIn": "Sign In",
+    "signOut": "Sign Out"
+  },
+  "auth": {
+    "connectWallet": "Connect Wallet",
+    "disconnectWallet": "Disconnect",
+    "walletConnected": "Wallet Connected",
+    "signInWith": "Sign in with {{provider}}"
+  },
+  "course": {
+    "enroll": "Enroll Now",
+    "enrolled": "Continue Learning",
+    "completed": "Completed",
+    "lessons": "{{count}} lessons",
+    "xp": "{{amount}} XP",
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "progress": "{{percent}}% complete"
+  },
+  "gamification": {
+    "streak": "{{days}} day streak",
+    "rank": "Rank #{{position}}",
+    "level": "Level {{level}}",
+    "xpToNext": "{{xp}} XP to next level",
+    "achievement": "Achievement Unlocked!"
+  },
+  "home": {
+    "title": "Learn Solana Development",
+    "subtitle": "Earn verifiable credentials and XP as you master blockchain development",
+    "cta": "Start Learning"
+  }
+}
