@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { Footer } from './footer';
 import { MobileNav } from './mobile-nav';
 import { Navbar } from './navbar';
+import { Sidebar } from './sidebar';
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -17,7 +18,7 @@ interface AppShellProps {
 }
 
 /**
- * App Shell - Main layout wrapper with Navbar, Footer, and MobileNav.
+ * App Shell - Main layout wrapper with Sidebar, Navbar, Footer, and MobileNav.
  */
 export function AppShell({
   children,
@@ -27,22 +28,28 @@ export function AppShell({
   className,
 }: AppShellProps) {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar variant={variant} />
+    <div className="flex min-h-screen">
+      {/* Sidebar - desktop only */}
+      <Sidebar />
 
-      <main
-        className={cn(
-          'flex-1',
-          // Add bottom padding for mobile nav
-          showMobileNav && 'pb-16 md:pb-0',
-          className
-        )}
-      >
-        {children}
-      </main>
+      {/* Main content area */}
+      <div className="flex flex-1 flex-col md:pl-16">
+        <Navbar variant={variant} />
 
-      {showFooter && <Footer />}
-      {showMobileNav && <MobileNav />}
+        <main
+          className={cn(
+            'flex-1',
+            // Add bottom padding for mobile nav
+            showMobileNav && 'pb-16 md:pb-0',
+            className
+          )}
+        >
+          {children}
+        </main>
+
+        {showFooter && <Footer />}
+        {showMobileNav && <MobileNav />}
+      </div>
     </div>
   );
 }
