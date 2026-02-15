@@ -44,7 +44,7 @@ export function Sidebar() {
 
   return (
     <TooltipProvider delayDuration={0}>
-      <aside className="fixed left-0 top-0 z-40 hidden h-screen w-16 flex-col border-r bg-background md:flex hover:w-56 transition-all duration-200 group">
+      <aside className="fixed left-0 top-0 z-[60] hidden h-screen w-16 flex-col border-r bg-background md:flex hover:w-56 transition-all duration-200 group">
         {/* Logo */}
         <Link
           href={ROUTES.HOME}
@@ -58,9 +58,14 @@ export function Sidebar() {
             className="h-8 w-auto object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
             priority
           />
-          <div className="absolute flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-sm group-hover:opacity-0 transition-opacity duration-200">
-            SA
-          </div>
+          <Image
+            src="/ST-EMERALD-COMPRESSED.png"
+            alt="Superteam Academy"
+            width={40}
+            height={40}
+            className="absolute size-10 object-contain group-hover:opacity-0 transition-opacity duration-200"
+            priority
+          />
         </Link>
 
         {/* Navigation */}
@@ -89,7 +94,7 @@ export function Sidebar() {
         </nav>
 
         {/* Solana Logo at bottom */}
-        <div className="border-t p-4">
+        <div className="border-t bg-black p-4">
           <div className="flex items-center justify-center">
             <Image
               src="/solanaLogoMark.png"
